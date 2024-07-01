@@ -1,0 +1,46 @@
+{% extends 'base_template.html' %}
+
+{% block title %}
+Services
+{% endblock title %}
+
+{% block content %}
+<div class="mt-5" style="color: white;">.</div>
+
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Services</h2>
+          <p>Delivering secure web, app, UI/UX, and Excel solutions with a steadfast commitment to customer safety at every stage of development</p>
+        </div><!-- End Section Title -->
+  
+        <div class="container">
+  
+          <div class="row gy-4">
+           
+
+            
+  
+            <div class="col-sm-12 col-md-10 d-flex me-auto ms-auto" data-aos="fade-up" data-aos-delay="100">
+              <div class="service-item position-relative">
+                <div class="icon"> <i class="{{service.icon_class}}"></i> </div>
+                <h4><a href="#" class="stretched-link">{{service.Title}}</a></h4>
+                <img style="width: 100%; display: block; margin-left: auto; margin-right: auto;" src="{{service.image.url}}" alt="{{service.Title}}">
+                <p style="text-align: justify;">{{ service.discription}}    </p>
+              </div>
+            </div><!-- End Service Item -->
+
+            
+  
+
+  
+          </div>
+  
+        </div>
+  
+      </section><!-- /Services Section -->
+
+{% endblock content %}

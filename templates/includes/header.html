@@ -1,0 +1,41 @@
+<header id="header" style="background-color: #273c75;" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="/" class="logo d-flex align-items-center me-auto">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1 class="sitename">Tech_IT
+
+        </h1>
+      </a>
+
+      <nav id="navmenu"  class="navmenu">
+        <ul>
+          <li><a href="/#hero" class="">Home</a></li>
+          <li><a href="/about_us/#about">About</a></li>
+          <li><a href="/services/#services">Services</a></li>
+          <li><a href="/portfolio/#portfolio">Portfolio</a></li>
+          <li><a href="/teams/#team">Team</a></li>
+          <li><a href="/pricing/#pricing">Pricing</a></li>
+
+          <li><a href="/contuct_us/#contact">Contact</a></li>
+
+          {% if user.is_authenticated %}
+          <li><a href="/inbox/#inbox" >
+            <span class="fs-5"><i class="fa-solid fa-bell"></i></span>
+            <span class="badge">{{number}}</span>
+          </a></li>
+          {% endif %}
+
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+      {% if user.is_authenticated %}
+      
+      <a class="btn-getstarted" href="/logout/">  <i class="fa-solid fa-right-from-bracket"></i>   Logout</a>
+      {% else %}
+      <a class="btn-getstarted" href="/login/"><i class="fa-solid fa-user"></i> Login</a>
+      {% endif %}
+
+    </div>
+  </header>

@@ -1,0 +1,55 @@
+{% extends "base_template.html" %}
+
+{% block title %}
+Login
+{% endblock title %}
+
+{% block extralinks %}
+<link rel="stylesheet" href="/static/assets/style.css">
+
+{% endblock extralinks %}
+
+
+{% block content %}
+
+<div class="mt-5" style="color: white;">.</div>
+
+<div class="wrapper">
+    <div class="logo">
+        <img src="/static/icon.png" alt="">
+    </div>
+
+
+    {% if messages %}
+    {{message.tags}}  
+    <div class="text-center mt-4 name" role='alert'>
+      {% for message in messages %}
+      {{message}}
+      {% endfor %}
+
+    </div>
+    {% else %}
+    <div class="text-center mt-4 name">
+        Tech_IT
+    </div>
+    {% endif %}
+
+    <form action="{% url 'login_user_deshboard' %}" class="p-3 mt-3" method="post">
+        {% csrf_token %}
+        <div class="form-field d-flex align-items-center">
+            <span class="far fa-user"></span>
+            <input type="text" name="userName" id="userName" placeholder="Username">
+        </div>
+        <div class="form-field d-flex align-items-center">
+            <span class="fas fa-key"></span>
+            <input type="password" name="password" id="pwd" placeholder="Password">
+        </div>
+        <button type="submit" class="btn mt-3">Login</button>
+    </form>
+    <div class="text-center fs-6">
+        <a href="#">Forget password?</a> or <a href="#">Sign up</a>
+    </div>
+</div>
+
+
+{% endblock content %}

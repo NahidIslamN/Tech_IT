@@ -1,0 +1,50 @@
+{% extends 'base_template.html' %}
+
+
+{% block title %}
+Pricing
+{% endblock title %}
+
+
+
+{% block content %}
+<div class="mt-5" style="color: white;">.</div>
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing section">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Pricing</h2>
+          <p>Pricing Overview for Web and Mobile App Development</p>
+        </div><!-- End Section Title -->
+  
+        <div class="container">
+  
+          <div class="row gy-4">
+
+
+            <div class="col-lg-8 me-auto ms-auto" data-aos="zoom-in" data-aos-delay="300">
+              <div class="pricing-item">
+                <h3>Developer Plan</h3>
+                <ul>
+                  {% for i in prices %}
+                  <li><i class="bi bi-check"></i> <span>{{i.Title}}: ${{i.max_price}} - ${{i.min_price}}</span></li>
+                  {% endfor %}
+                 
+                </ul>
+                <a href="/contuct_us/#contact/" class="buy-btn">Contact Us</a>
+              </div>
+            </div><!-- End Pricing Item -->
+  
+
+  
+          
+  
+
+  
+          </div>
+  
+        </div>
+  
+      </section><!-- /Pricing Section -->
+{% endblock content %}
